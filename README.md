@@ -212,7 +212,7 @@ Vite gives us a great compromise between static vanilla web application files an
 
 Since our "base" image in the above examples is "python:3.11", we'd want to change this to a tag that indicates a specific system (like Alpine). This would ensure we have a package manager to install Node and any requisite dependencies (like yarn). Finally, we would want to call the "build" script for this package as part from within the `Dockerfile`.
 
-I kept it simple because there are other ways you may want to go about this. You may want to manage the application separately (within another repository, perhaps) and hook it in as a submodule or some other managed artifact. You may also want to call it from a CI script, or add intermediate build products to a `.dockerignore` so only the static files get moved into the deployment image with the `COPY * *` command. Finally, you may want to combine multiple base containers (it's possible!) for different build passes to use a Node base image directly for the frontend.
+I kept it simple because there are other ways you may want to go about this. You may want to manage the application separately (within another repository, perhaps) and hook it in as a submodule or some other managed artifact. You may also want to call it from a CI script, or add intermediate build products to a `.dockerignore` so only the static files get moved into the deployment image with the `COPY . .` command. Finally, you may want to combine multiple base containers (it's possible!) for different build passes to use a Node base image directly for the frontend.
 
 ![Too much for you?](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dykiano49h1kwh6fjakk.jpg)
 
